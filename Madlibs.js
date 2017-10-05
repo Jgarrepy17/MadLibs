@@ -12,18 +12,23 @@ index=0;
 // specify positions
 populate(index,replacements,"position");
 alert (replacements);
+// enter parts of speech
 index=0;
 replace(index,sentence,replacements,"part of speech");
 alert (sentence);
 // switch people
 // train filler
 alert("Enter words that match the part of speech shown");
+// enter replacement words
 index=0;
 replace(index, sentence, replacements, "new word");
+// show the sentence
+alert("Go get the author to see the sentence!");
+sentenceString = sentence.join(' ');
+alert(sentenceString.toString());
+//end
 
-alert('Go get the author to see the sentence')
-sentenceString = sentence.join(' ')
-alert(sentenceString.toString())
+
 function populate(sindex,sarray,label){
 	do {
 		sarray[sindex]=prompt("Next "+label+"?");
@@ -37,11 +42,11 @@ function populate(sindex,sarray,label){
 
 function replace (sindex,sarray,rarray,label) {
 	for (sindex = 0; sindex < rarray.length; sindex++) {
-		if (label == 'new word'){
-			sarray[rarray[sindex]] = prompt("provide a "+sarray[rarray[sindex]]+" here");
+		if (label=="new word"){
+			sarray[rarray[sindex]] = prompt("Provide a "+sarray[rarray[sindex]]+" here: ");
 		}
-		else{
-		sarray[rarray[sindex]] = prompt("next "+label+"?");
+		else {
+			sarray[rarray[sindex]] = prompt("next "+label+"?");
 		}
 	}
 	return sarray;
